@@ -1,0 +1,26 @@
+#all-things-create {
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-origin: content-box;
+  padding-bottom: 2rem;
+}
+
+#main {
+  transform: translateZ(0);
+}
+
+.article-content {
+  overflow-y: scroll;
+}
+
+.article-figure {
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.orbit-navigation {
+  position: relative;
+}

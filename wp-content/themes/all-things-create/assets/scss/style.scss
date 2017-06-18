@@ -1,0 +1,27 @@
+/******************************************************************
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here is where you import
+all of your Sass files so they can compile into one
+CSS file.
+
+******************************************************************/
+
+// Import mixin styles
+@import "mixins";
+
+// Import layout
+@import "layout";
+
+// Import offcanvas styles
+@import "offcanvas";
+
+// Import parallax styles
+@import "parallax";
+
+// Import timeline styles
+@import "timeline";
+
+// Import header styles
+@import "header";

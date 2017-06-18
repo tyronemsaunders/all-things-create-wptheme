@@ -1,0 +1,140 @@
+<?php
+function register_atc_field_groups() {
+	if (function_exists('register_field_group')) {
+		register_field_group(array (
+			'id' => 'acf_categories',
+			'title' => 'Categories',
+			'fields' => array (
+				array (
+					'key' => 'field_59407d316aeba',
+					'label' => 'Featured Image',
+					'name' => 'featured_image',
+					'type' => 'image',
+					'instructions' => 'Select or upload a featured image for this category. This featured image will be used as a background image for the category\'s section of the timeline.',
+					'save_format' => 'object',
+					'preview_size' => 'thumbnail',
+					'library' => 'all',
+				),
+			),
+			'location' => array (
+				array (
+					array (
+						'param' => 'ef_taxonomy',
+						'operator' => '==',
+						'value' => 'category',
+						'order_no' => 0,
+						'group_no' => 0,
+					),
+				),
+			),
+			'options' => array (
+				'position' => 'normal',
+				'layout' => 'no_box',
+				'hide_on_screen' => array (
+					0 => 'permalink',
+					1 => 'the_content',
+					2 => 'excerpt',
+					3 => 'custom_fields',
+					4 => 'discussion',
+					5 => 'comments',
+					6 => 'slug',
+					7 => 'format',
+					8 => 'featured_image',
+					9 => 'tags',
+					10 => 'send-trackbacks',
+				),
+			),
+			'menu_order' => 0,
+		));
+		register_field_group(array (
+			'id' => 'acf_floaters',
+			'title' => 'Floaters',
+			'fields' => array (
+				array (
+					'key' => 'field_594082216cf92',
+					'label' => 'Speed',
+					'name' => 'speed',
+					'type' => 'number',
+					'instructions' => 'Select the speed at which the floater will move relative to the page scroll. Positive numbers move floaters faster than the page scrolls.',
+					'required' => 1,
+					'default_value' => 0,
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'min' => 0,
+					'max' => 10,
+					'step' => 1,
+				),
+				array (
+					'key' => 'field_594083126cf93',
+					'label' => 'X Coordinate',
+					'name' => 'x_coordinate',
+					'type' => 'number',
+					'instructions' => 'Select the location of the floater as a percentage.	The x-coordinate is measured from the left side of the page.	A value of 0 positions the floater flush with the left side of the page.	A value of 100 positions the floater flush with the right side of the page.',
+					'required' => 1,
+					'default_value' => 50,
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'min' => 0,
+					'max' => 100,
+					'step' => 1,
+				),
+				array (
+					'key' => 'field_5940839f6cf94',
+					'label' => 'Y Coordinate',
+					'name' => 'y_coordinate',
+					'type' => 'number',
+					'instructions' => 'Select the location of the floater as a percentage.	The y-coordinate is measured from the top side of the page.	A value of 0 positions the floater flush with the top of the page.	A value of 100 positions the floater flush with the bottom of the page.',
+					'required' => 1,
+					'default_value' => 50,
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'min' => 0,
+					'max' => 100,
+					'step' => 1,
+				),
+				array (
+					'key' => 'field_594450065dd0a',
+					'label' => 'Width',
+					'name' => 'width',
+					'type' => 'number',
+					'instructions' => 'Select a width for the floater that is a percentage of the page width.	For example if you would like to floater to be as wide as half of the page select 50.',
+					'required' => 1,
+					'default_value' => 10,
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'min' => 0,
+					'max' => 100,
+					'step' => 1,
+				),
+			),
+			'location' => array (
+				array (
+					array (
+						'param' => 'post_type',
+						'operator' => '==',
+						'value' => 'floater',
+						'order_no' => 0,
+						'group_no' => 0,
+					),
+				),
+			),
+			'options' => array (
+				'position' => 'normal',
+				'layout' => 'no_box',
+				'hide_on_screen' => array (
+					0 => 'custom_fields',
+					1 => 'discussion',
+					2 => 'comments',
+					3 => 'format',
+					4 => 'send-trackbacks',
+				),
+			),
+			'menu_order' => 0,
+		));
+	}
+}
+add_action('init', 'register_atc_field_groups');
